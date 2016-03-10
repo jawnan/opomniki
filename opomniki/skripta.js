@@ -9,6 +9,20 @@ window.addEventListener('load', function() {
 	//Izvedi prijavo
 	document.querySelector("#prijavniGumb").addEventListener('click', izvediPrijavo);
 	
+	var dodajOpomnik = function(){
+		var nazivInput = document.querySelector("#naziv_opomnika").value;
+		var casInput = document.querySelector("#cas_opomnika").value;
+		document.querySelector("#naziv_opomnika").value="";
+		document.querySelector("#cas_opomnika").value="";
+		document.querySelector("#opomniki").innerHTML += " \
+			<div class='opomnik rob senca'> \
+				<div class = 'naziv_opomnika'>" + nazivInput + "</div> \
+				<div class = 'cas_opomnika'>Opomnik čez <span>" + casInput + "</span> sekund.</div> \
+			</div>"
+				
+	}
+	document.querySelector("#dodajGumb").addEventListener('click', dodajOpomnik);
+	
 	
 	//Posodobi opomnike
 	var posodobiOpomnike = function() {
